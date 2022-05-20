@@ -13,7 +13,14 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/inc" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib/eigen-3.4.0" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/data" />
 				</Compiler>
+				<Linker>
+					<Add library="C:/GitHub/UltrafastUltrasoundBeamforming/lib/libfftw3-3.lib" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="lib/bin/Release/testCPP" prefix_auto="1" extension_auto="1" />
@@ -21,18 +28,97 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-O2" />
+					<Add option="-std=c17" />
+					<Add option="-fopenmp" />
+					<Add option="-march=nehalem" />
+					<Add option="-ffast-math" />
+					<Add option="-fno-math-errno" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/inc" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib/eigen-3.4.0" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/data" />
+					<Add directory="C:/Program Files/MATLAB/R2020b/extern/include" />
 				</Compiler>
 				<Linker>
+					<Add option="-O3" />
 					<Add option="-s" />
+					<Add library="C:/GitHub/UltrafastUltrasoundBeamforming/lib/libfftw3-3.lib" />
+					<Add library="C:/Program Files/CodeBlocks/MinGW/bin/libgomp-1.dll" />
+					<Add library="C:/GitHub/UltrafastUltrasoundBeamforming/lib/bin/Release/libBeamformingLibrary.a" />
+					<Add library="C:/Program Files/MATLAB/R2020b/extern/lib/win64/mingw64/libMatlabDataArray.lib" />
+					<Add library="C:/Program Files/MATLAB/R2020b/extern/lib/win64/mingw64/libMatlabEngine.lib" />
+					<Add library="C:/Program Files/MATLAB/R2020b/extern/bin/win64/libMatlabDataArray.dll.a" />
+					<Add library="C:/GitHub/UltrafastUltrasoundBeamforming/lib/libfftw3-3.dll" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib" />
+					<Add directory="C:/Program Files/MATLAB/R2020b/extern/bin/win64" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/inc" />
+			<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib/eigen-3.4.0" />
+			<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/data" />
 		</Compiler>
+		<Linker>
+			<Add library="C:/GitHub/UltrafastUltrasoundBeamforming/lib/libfftw3-3.lib" />
+			<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib" />
+		</Linker>
+		<Unit filename="../data/RFAngle1Strain.bin" />
+		<Unit filename="../data/RFAngle1unStrain.bin" />
+		<Unit filename="../data/RFAngle2Strain.bin" />
+		<Unit filename="../data/RFAngle2unStrain.bin" />
+		<Unit filename="../data/RFRFCalfMultiFrame.bin" />
+		<Unit filename="../data/RFSphere.bin" />
+		<Unit filename="../data/RFTall.bin" />
+		<Unit filename="../data/RFTall10KPA.bin" />
+		<Unit filename="../data/RFTallElastic.bin" />
+		<Unit filename="../data/RFsim.bin" />
+		<Unit filename="../data/paramsDoubAngle1Strain.bin" />
+		<Unit filename="../data/paramsDoubAngle1unStrain.bin" />
+		<Unit filename="../data/paramsDoubAngle2Strain.bin" />
+		<Unit filename="../data/paramsDoubAngle2unStrain.bin" />
+		<Unit filename="../data/paramsDoubRFCalfMultiFrame.bin" />
+		<Unit filename="../data/paramsDoubSphere.bin" />
+		<Unit filename="../data/paramsDoubTall.bin" />
+		<Unit filename="../data/paramsDoubTall10KPA.bin" />
+		<Unit filename="../data/paramsDoubTallElastic.bin" />
+		<Unit filename="../data/paramsDoubsim.bin" />
+		<Unit filename="../data/paramsINTAngle1Strain.bin" />
+		<Unit filename="../data/paramsINTAngle1unStrain.bin" />
+		<Unit filename="../data/paramsINTAngle2Strain.bin" />
+		<Unit filename="../data/paramsINTAngle2unStrain.bin" />
+		<Unit filename="../data/paramsINTRFCalfMultiFrame.bin" />
+		<Unit filename="../data/paramsINTSphere.bin" />
+		<Unit filename="../data/paramsINTTall.bin" />
+		<Unit filename="../data/paramsINTTall10KPA.bin" />
+		<Unit filename="../data/paramsINTTallElastic.bin" />
+		<Unit filename="../data/paramsINTsim.bin" />
+		<Unit filename="../data/paramsMAPAngle1Strain.bin" />
+		<Unit filename="../data/paramsMAPAngle1unStrain.bin" />
+		<Unit filename="../data/paramsMAPAngle2Strain.bin" />
+		<Unit filename="../data/paramsMAPAngle2unStrain.bin" />
+		<Unit filename="../data/paramsMAPRFCalfMultiFrame.bin" />
+		<Unit filename="../data/paramsMAPSphere.bin" />
+		<Unit filename="../data/paramsMAPTall.bin" />
+		<Unit filename="../data/paramsMAPTall10KPA.bin" />
+		<Unit filename="../data/paramsMAPTallElastic.bin" />
+		<Unit filename="../data/paramsMAPsim.bin" />
+		<Unit filename="../data/paramsPOSAngle1Strain.bin" />
+		<Unit filename="../data/paramsPOSAngle1unStrain.bin" />
+		<Unit filename="../data/paramsPOSAngle2Strain.bin" />
+		<Unit filename="../data/paramsPOSAngle2unStrain.bin" />
+		<Unit filename="../data/paramsPOSRFCalfMultiFrame.bin" />
+		<Unit filename="../data/paramsPOSSphere.bin" />
+		<Unit filename="../data/paramsPOSTall.bin" />
+		<Unit filename="../data/paramsPOSTall10KPA.bin" />
+		<Unit filename="../data/paramsPOSTallElastic.bin" />
+		<Unit filename="../data/paramsPOSsim.bin" />
+		<Unit filename="BinaryFileReader.cpp" />
+		<Unit filename="BinaryFileReader.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="matlabPlottingHelper.cpp" />
+		<Unit filename="matlabPlottingHelper.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

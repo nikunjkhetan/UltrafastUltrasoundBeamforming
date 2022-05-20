@@ -16,7 +16,14 @@
 				<Compiler>
 					<Add option="-Wall" />
 					<Add option="-g" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib/eigen-3.4.0" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/src" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/inc" />
 				</Compiler>
+				<Linker>
+					<Add library="C:/GitHub/UltrafastUltrasoundBeamforming/lib/libfftw3-3.lib" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="lib/bin/Release/BeamformingLibrary" prefix_auto="1" extension_auto="1" />
@@ -26,17 +33,57 @@
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
-					<Add option="-Wall" />
-					<Add option="-O2" />
+					<Add option="-O3" />
+					<Add option="-std=c++14" />
+					<Add option="-fopenmp" />
+					<Add option="-march=nehalem" />
+					<Add option="-ffast-math" />
+					<Add option="-fno-math-errno" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib/eigen-3.4.0" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/src" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/inc" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib" />
 				</Compiler>
 				<Linker>
+					<Add option="-O3" />
 					<Add option="-s" />
+					<Add library="C:/GitHub/UltrafastUltrasoundBeamforming/lib/libfftw3-3.lib" />
+					<Add library="C:/Program Files/CodeBlocks/MinGW/bin/libgomp-1.dll" />
+					<Add library="C:/GitHub/UltrafastUltrasoundBeamforming/lib/libfftw3-3.dll" />
+					<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib" />
 				</Linker>
 			</Target>
 		</Build>
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Compiler>
+			<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib/eigen-3.4.0" />
+			<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/src" />
+			<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/inc" />
+		</Compiler>
+		<Linker>
+			<Add library="C:/GitHub/UltrafastUltrasoundBeamforming/lib/libfftw3-3.lib" />
+			<Add directory="C:/GitHub/UltrafastUltrasoundBeamforming/lib" />
+		</Linker>
+		<Unit filename="inc/DPChelper.h" />
+		<Unit filename="inc/Parameters.h" />
+		<Unit filename="inc/SIMDHelper.h" />
+		<Unit filename="inc/bfmAcqHelper.h" />
+		<Unit filename="inc/calcPointHelper.h" />
+		<Unit filename="inc/fftw3.h" />
+		<Unit filename="inc/fftwHelper.h" />
+		<Unit filename="inc/genTestWisdom.h" />
+		<Unit filename="inc/idxtHelper.h" />
+		<Unit filename="inc/incCustomHeader.h" />
+		<Unit filename="inc/incHeaders.h" />
+		<Unit filename="inc/main2.h" />
+		<Unit filename="src/DPChelper.cpp" />
+		<Unit filename="src/Parameters.cpp" />
+		<Unit filename="src/SIMDHelper.cpp" />
+		<Unit filename="src/bfmAcqHelper.cpp" />
+		<Unit filename="src/calcPointHelper.cpp" />
+		<Unit filename="src/fftwHelper.cpp" />
+		<Unit filename="src/genTestWisdom.cpp" />
+		<Unit filename="src/idxtHelper.cpp" />
+		<Unit filename="src/main2.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
