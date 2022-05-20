@@ -1,0 +1,28 @@
+%% Compile Functions
+clearvars
+% close all
+
+
+% srcFolder = 'computeDASBMode';
+srcFolder = 'computeDASDPC';
+% srcFolder = 'computeDMAS';
+
+% doublecheck that this matches srcFolder
+currentDir = regexp(cd, filesep, 'split');
+% outputFolder = fullfile(currentDir{:},'+reconraw','@DASBMode');
+outputFolder = fullfile(currentDir{:},'+reconraw','@DASDPC');
+% outputFolder = 'C:\Users\verasonics\Desktop\Vantage-4.5.4-2108261500\System\+vsv\+reconraw\@DASDPC';
+
+compiler = true; % true for minGW, false for Visual Studio
+
+compileFunctions(srcFolder,outputFolder,compiler);
+
+%% Load Data and Generate Parameters
+[param,RFdata] = initParams('simData',0);
+% beamform = reconraw.DASBModeOffline(param);
+beamform = reconraw.DASDPCOffline(param);
+
+%% Compute Test Vals
+
+[image,matT,times] = runTestsBFM(beamform,RFdata,srcFolder);
+
